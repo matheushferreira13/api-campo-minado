@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/app.js",
     "start": "node src/app.js",
-    "db:create": "PGPASSWORD=postgres psql -U postgres -h localhost -f schema.sql"
+    "db:create": "PGPASSWORD=${DB_PASSWORD:-postgres} psql -U ${DB_USER:-postgres} -h ${DB_HOST:-localhost} -p ${DB_PORT:-5432} -d ${DB_NAME:-campo_minado} -f schema.sql"
   },
 
   "dependencies": {
